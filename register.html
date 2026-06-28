@@ -1,41 +1,42 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>Register — Bargain Drop</title>
+<title>Create Account — Bargain Drop</title>
 <style>
-:root{--bg:#fff;--fg:#111;--muted:#777;--line:#eee;--red:#e60023;--green:#10b981;--blue:#2563eb}
+:root{--bg:#fff;--fg:#111;--muted:#777;--line:#eee;--red:#e60023;--green:#10b981}
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;background:#f8f8f8;color:var(--fg);min-height:100vh;display:flex;flex-direction:column;align-items:center;padding:20px}
-.auth-container{width:100%;max-width:400px;margin-top:30px}
-.logo-area{text-align:center;margin-bottom:24px}
-.auth-logo-icon{width:56px;height:56px;border-radius:14px;background:linear-gradient(135deg,#e60023,#ff6b81);display:inline-flex;align-items:center;justify-content:center;color:#fff;font-size:1.3rem;font-weight:900}
-.auth-logo-text{font-size:1.4rem;font-weight:900;margin-top:8px}
-.auth-logo-text .bd-b{background:linear-gradient(135deg,#e60023,#ff4757);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.auth-logo-text .bd-d{color:#111}
-.auth-card{background:#fff;border-radius:16px;padding:24px;border:1px solid var(--line)}
-.auth-title{font-size:1.1rem;font-weight:800;text-align:center;margin-bottom:20px}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;background:#f8f8f8;color:var(--fg);min-height:100vh;display:flex;flex-direction:column}
+.auth-container{flex:1;display:flex;flex-direction:column;justify-content:center;padding:40px 20px;max-width:420px;margin:0 auto;width:100%}
+.logo-area{text-align:center;margin-bottom:32px}
+.logo-icon{width:48px;height:48px;border-radius:12px;background:linear-gradient(135deg,#e60023,#ff6b81);display:inline-flex;align-items:center;justify-content:center;color:#fff;font-size:0.85rem;font-weight:900;letter-spacing:1px;text-decoration:none}
+.logo-text{font-size:1rem;font-weight:700;color:#555;margin-top:8px}
+.logo-text strong{color:var(--fg)}
+.auth-card{background:#fff;border-radius:16px;padding:28px 24px;border:1px solid var(--line)}
+.auth-title{font-size:1.2rem;font-weight:800;margin-bottom:20px;text-align:center}
 .form-group{margin-bottom:14px}
-.form-group label{display:block;font-size:.7rem;font-weight:700;margin-bottom:5px;color:var(--muted)}
-.form-group input{width:100%;padding:12px 14px;border:1.5px solid var(--line);border-radius:10px;font-size:.8rem;outline:none;transition:border .2s}
-.form-group input:focus{border-color:var(--blue)}
-.submit-btn{width:100%;padding:13px;background:#111;color:#fff;border:none;border-radius:10px;font-size:.8rem;font-weight:700;cursor:pointer;margin-top:6px;transition:opacity .15s}
-.submit-btn:active{opacity:.85}
-.divider{display:flex;align-items:center;gap:10px;margin:18px 0;font-size:.65rem;color:var(--muted)}
-.divider:before,.divider:after{content:'';flex:1;height:1px;background:var(--line)}
-.signin-prompt{text-align:center;font-size:.72rem;color:var(--muted);margin-top:16px}
-.signin-prompt a{color:var(--blue);font-weight:700;text-decoration:none}
-.error-msg{background:#fce4e4;color:var(--red);padding:10px;border-radius:8px;font-size:.7rem;margin-bottom:14px;display:none}
-.terms-text{font-size:.62rem;color:var(--muted);text-align:center;margin-top:12px;line-height:1.4}
-.terms-text a{color:var(--blue)}
+.form-group label{display:block;font-size:0.72rem;font-weight:600;margin-bottom:4px;color:var(--muted)}
+.form-group input{width:100%;padding:12px 14px;border:1.5px solid var(--line);border-radius:10px;font-size:0.85rem;outline:none;transition:border .15s;background:#fafafa}
+.form-group input:focus{border-color:var(--fg);background:#fff}
+.error-msg{color:var(--red);font-size:0.72rem;margin-bottom:12px;text-align:center;min-height:20px}
+.submit-btn{width:100%;padding:13px;background:var(--fg);color:#fff;border:none;border-radius:10px;font-size:0.82rem;font-weight:700;cursor:pointer;margin-bottom:10px;transition:opacity .15s}
+.submit-btn:hover{opacity:0.9}
+.terms-text{text-align:center;font-size:0.65rem;color:var(--muted);margin-bottom:16px;line-height:1.5}
+.terms-text a{color:var(--fg);text-decoration:underline}
+.divider{display:flex;align-items:center;gap:10px;margin:16px 0;color:var(--muted);font-size:0.68rem}
+.divider::before,.divider::after{content:"";flex:1;border-top:1px solid var(--line)}
+.google-btn{width:100%;padding:12px;border:1.5px solid #dadce0;border-radius:10px;background:#fff;font-size:0.78rem;font-weight:500;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:10px;transition:all .15s;color:#3c4043}
+.google-btn:hover{background:#f8f9fa;border-color:#c4c7cc;box-shadow:0 1px 3px rgba(0,0,0,0.06)}
+.signin-link{text-align:center;margin-top:16px;font-size:0.72rem;color:var(--muted)}
+.signin-link a{color:var(--fg);font-weight:600;text-decoration:none}
 </style>
 </head>
 <body>
 <div class="auth-container">
   <div class="logo-area">
-    <a href="/" style="text-decoration:none"><div class="auth-logo-icon">BD</div></a>
-    <div class="auth-logo-text"><span class="bd-b">BARGAIN</span><span class="bd-d">DROP</span></div>
+    <a href="/" style="text-decoration:none"><div class="logo-icon">BD</div></a>
+    <div class="logo-text"><strong>BARGAIN</strong> DROP</div>
   </div>
   <div class="auth-card">
     <div class="auth-title">Create Account</div>
@@ -45,33 +46,48 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;b
     <div class="form-group"><label>Password</label><input type="password" id="password" placeholder="At least 6 characters" autocomplete="new-password"></div>
     <div class="form-group"><label>Confirm Password</label><input type="password" id="confirm" placeholder="Re-enter password" autocomplete="new-password"></div>
     <button class="submit-btn" onclick="handleRegister()">Create Account</button>
-    <div class="terms-text">By creating an account, you agree to our <a href="info/terms.html">Terms &amp; Conditions</a> and <a href="info/privacy.html">Privacy Policy</a>.</div>
-    <div class="divider">or continue with</div>
-    <div style="display:flex;gap:8px">
-      <button style="flex:1;padding:10px;border:1.5px solid var(--line);border-radius:10px;background:#fff;font-size:.72rem;font-weight:600;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:6px">G Google</button>
-      <button style="flex:1;padding:10px;border:1.5px solid var(--line);border-radius:10px;background:#fff;font-size:.72rem;font-weight:600;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:6px"> Apple</button>
-    </div>
+    <div class="terms-text">By creating an account, you agree to our <a href="info/terms.html">Terms</a> and <a href="info/privacy.html">Privacy Policy</a>.</div>
+    <div class="divider">or sign up with</div>
+    <button class="google-btn" onclick="handleGoogleSignUp()">
+      <svg width="20" height="20" viewBox="0 0 48 48"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.95 16.46 0 20.12 0 24c0 3.88.95 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg>
+      <span>Sign up with Google</span>
+    </button>
   </div>
-  <div class="signin-prompt">Already have an account? <a href="signin.html">Sign in</a></div>
+  <div class="signin-link">Already have an account? <a href="signin.html">Sign in</a></div>
 </div>
 <script>
-function showError(msg){var e=document.getElementById('error-msg');e.textContent=msg;e.style.display='';setTimeout(function(){e.style.display='none'},4000)}
+function showError(msg){document.getElementById("error-msg").textContent=msg||""}
+
 function handleRegister(){
-  var name=document.getElementById('name').value.trim();
-  var email=document.getElementById('email').value.trim();
-  var pw=document.getElementById('password').value;
-  var cp=document.getElementById('confirm').value;
-  if(!name||!email||!pw){showError('All fields are required');return}
-  if(!email.includes('@')){showError('Please enter a valid email address');return}
-  if(pw.length<6){showError('Password must be at least 6 characters');return}
-  if(pw!==cp){showError('Passwords do not match');return}
-  var users=JSON.parse(localStorage.getItem('bd_users')||'{}');
-  if(users[email]){showError('An account with this email already exists');return}
-  users[email]={name:name,password:pw,created:new Date().toISOString()};
-  localStorage.setItem('bd_users',JSON.stringify(users));
-  localStorage.setItem('bd_user',JSON.stringify({email:email,name:name}));
-  localStorage.setItem('bd_temp_email',email);
-  location.href='profile.html';
+  var n=document.getElementById("name").value.trim();
+  var e=document.getElementById("email").value.trim();
+  var p=document.getElementById("password").value;
+  var c=document.getElementById("confirm").value;
+  if(!n||!e||!p||!c){showError("Please fill in all fields");return}
+  if(p.length<6){showError("Password must be at least 6 characters");return}
+  if(p!==c){showError("Passwords do not match");return}
+  localStorage.setItem("bd_user",JSON.stringify({name:n,email:e,provider:"email",signedInAt:new Date().toISOString()}));
+  window.location.href="index.html";
+}
+
+function handleGoogleSignUp(){
+  // Google Sign-Up - ready to integrate with Google Identity Services
+  var token=localStorage.getItem("bd_google_token");
+  if(token){
+    fetch("https://www.googleapis.com/oauth2/v3/userinfo",{headers:{Authorization:"Bearer "+token}})
+    .then(function(r){return r.json()}).then(function(data){
+      localStorage.setItem("bd_user",JSON.stringify({name:data.name,email:data.email,picture:data.picture,provider:"google",signedInAt:new Date().toISOString()}));
+      window.location.href="index.html";
+    }).catch(function(){simulateGoogle()});
+  } else {
+    simulateGoogle();
+  }
+}
+
+function simulateGoogle(){
+  showError("");
+  localStorage.setItem("bd_user",JSON.stringify({name:"Demo User",email:"demo@bargaindrop.com",provider:"google",signedInAt:new Date().toISOString()}));
+  window.location.href="index.html";
 }
 </script>
 </body>

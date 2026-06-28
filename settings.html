@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Settings — Bargain Drop</title>
+<style>
+:root{--bg:#fff;--fg:#111;--muted:#777;--line:#eee;--red:#e60023;--green:#10b981;--blue:#2563eb}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;background:#f8f8f8;color:var(--fg);padding-bottom:80px}
+.top-bar{display:flex;align-items:center;justify-content:center;overflow:hidden;background:linear-gradient(90deg,#ff6b6b,#feca57,#ff9ff3,#54a0ff,#5f27cd);background-size:200% 100%;animation:slideGradient 4s linear infinite;padding:6px 0}
+.top-bar-inner{white-space:nowrap;font-size:.68rem;font-weight:800;color:#fff;text-shadow:0 1px 3px rgba(0,0,0,.3);letter-spacing:1px;animation:scrollText 8s linear infinite}
+@keyframes slideGradient{0%{background-position:0 50%}100%{background-position:200% 50%}}
+@keyframes scrollText{0%{transform:translateX(100%)}100%{transform:translateX(-100%)}}
+.header{display:flex;align-items:center;justify-content:space-between;padding:8px 14px;background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:100}
+.logo{display:flex;align-items:center;gap:6px;text-decoration:none}
+.logo-text{font-size:1.15rem;font-weight:900}
+.logo-text .bd-b{background:linear-gradient(135deg,#e60023,#ff4757);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.logo-text .bd-d{color:#111}
+.logo-icon{width:24px;height:24px;border-radius:6px;background:linear-gradient(135deg,#e60023,#ff6b81);display:flex;align-items:center;justify-content:center;color:#fff;font-size:.65rem;font-weight:900;flex-shrink:0}
+.header-actions{display:flex;align-items:center;gap:14px}
+.header-actions a{background:0 0;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;padding:2px;color:inherit;text-decoration:none}
+.cart-btn{position:relative}
+.cart-count{position:absolute;top:-6px;right:-8px;background:var(--red);color:#fff;font-size:.52rem;min-width:17px;height:17px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700}
+.back-link{display:flex;align-items:center;gap:4px;color:var(--blue);font-size:.75rem;font-weight:600;text-decoration:none;padding:14px 14px 0}
+.section-wrap{padding:14px}
+.section-title{font-size:.8rem;font-weight:800;margin-bottom:12px;text-transform:uppercase;letter-spacing:.5px;color:var(--muted)}
+.settings-list{display:flex;flex-direction:column;gap:8px}
+.setting-item{display:flex;align-items:center;gap:12px;padding:14px;background:#fff;border-radius:12px;border:1.5px solid var(--line);text-decoration:none;color:var(--fg);transition:all .15s}
+.setting-item:active{transform:scale(.98);background:#f9f9f9}
+.setting-icon{width:38px;height:38px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0}
+.setting-icon.address{background:#dbeafe;color:var(--blue)}
+.setting-icon.payment{background:#d1fae5;color:var(--green)}
+.setting-icon.account{background:#ede9fe;color:#8b5cf6}
+.setting-icon.contact{background:#fff3cd;color:#f59e0b}
+.setting-info{flex:1}.setting-info-title{font-size:.75rem;font-weight:700}.setting-info-desc{font-size:.6rem;color:var(--muted);margin-top:2px}.setting-arrow{color:var(--muted)}
+.bottom-nav{position:fixed;bottom:0;left:0;right:0;background:#fff;border-top:1px solid var(--line);display:flex;z-index:120;padding:4px 0 env(safe-area-inset-bottom,0)}
+.bottom-nav a{flex:1;display:flex;flex-direction:column;align-items:center;gap:2px;padding:5px;font-size:.58rem;color:var(--muted);text-decoration:none}
+.bottom-nav a.active{color:var(--fg)}
+.nav-icon{width:20px;height:20px}
+@media(min-width:768px){.section-wrap{max-width:700px;margin:0 auto}}
+</style>
+</head>
+<body>
+<div class="top-bar"><div class="top-bar-inner">🔥 SUMMER MEGA SALE — UP TO 70% OFF — FREE SHIPPING ORDERS $29+ — SHOP NOW 🔥</div></div>
+<div class="header">
+  <a href="/" class="logo"><div class="logo-icon">BD</div><span class="logo-text"><span class="bd-b">BARGAIN</span><span class="bd-d">DROP</span></span></a>
+  <div class="header-actions">
+    <a href="cart.html" class="cart-btn"><svg width="22" height="22" viewBox="0 0 24 24"><circle cx="9" cy="21" r="1" fill="#555"/><circle cx="20" cy="21" r="1" fill="#555"/><path d="M1 1h4l2.68 13.39a2 2 0 002 1.61h9.72a2 2 0 002-1.61L23 6H6" stroke="#555" stroke-width="1.8" fill="none"/></svg><span class="cart-count" id="cart-count">0</span></a>
+  </div>
+</div>
+<a href="profile.html" class="back-link">← Back to Profile</a>
+<div class="section-wrap"><div class="section-title">⚙️ Settings</div>
+<div class="settings-list">
+  <a href="settings/address.html" class="setting-item"><div class="setting-icon address">📍</div><div class="setting-info"><div class="setting-info-title">Address Book</div><div class="setting-info-desc">Manage your shipping addresses</div></div><div class="setting-arrow">›</div></a>
+  <a href="settings/payment.html" class="setting-item"><div class="setting-icon payment">💳</div><div class="setting-info"><div class="setting-info-title">My Payment Options</div><div class="setting-info-desc">Manage cards &amp; payment methods</div></div><div class="setting-arrow">›</div></a>
+  <a href="settings/account.html" class="setting-item"><div class="setting-icon account">👤</div><div class="setting-info"><div class="setting-info-title">Manage My Account</div><div class="setting-info-desc">Edit name, email &amp; password</div></div><div class="setting-arrow">›</div></a>
+  <a href="settings/contact.html" class="setting-item"><div class="setting-icon contact">✉️</div><div class="setting-info"><div class="setting-info-title">Contact Preferences</div><div class="setting-info-desc">Email &amp; notification settings</div></div><div class="setting-arrow">›</div></a>
+</div></div>
+<div class="section-wrap"><div class="section-title">ℹ️ My Info</div>
+<div class="settings-list">
+  <a href="info/shipping.html" class="setting-item"><div class="setting-icon address">📦</div><div class="setting-info"><div class="setting-info-title">Shipping Info</div><div class="setting-info-desc">Delivery times &amp; methods</div></div><div class="setting-arrow">›</div></a>
+  <a href="info/returns.html" class="setting-item"><div class="setting-icon payment">↩️</div><div class="setting-info"><div class="setting-info-title">Return Policy</div><div class="setting-info-desc">How to return items</div></div><div class="setting-arrow">›</div></a>
+  <a href="info/refund.html" class="setting-item"><div class="setting-icon account">💰</div><div class="setting-info"><div class="setting-info-title">Refund Policy</div><div class="setting-info-desc">Refund process &amp; timeline</div></div><div class="setting-arrow">›</div></a>
+  <a href="info/payment-methods.html" class="setting-item"><div class="setting-icon contact">💳</div><div class="setting-info"><div class="setting-info-title">Payment Methods</div><div class="setting-info-desc">Accepted payment types</div></div><div class="setting-arrow">›</div></a>
+  <a href="info/terms.html" class="setting-item"><div class="setting-icon contact">📄</div><div class="setting-info"><div class="setting-info-title">Terms &amp; Conditions</div><div class="setting-info-desc">Legal terms of service</div></div><div class="setting-arrow">›</div></a>
+</div></div>
+<nav class="bottom-nav">
+  <a href="/"><svg class="nav-icon" viewBox="0 0 24 24"><path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3" stroke="#777" stroke-width="2" fill="none"/></svg>Home</a>
+  <a href="products.html"><svg class="nav-icon" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1" stroke="#777" stroke-width="1.5" fill="none"/><rect x="14" y="3" width="7" height="7" rx="1" stroke="#777" stroke-width="1.5" fill="none"/><rect x="3" y="14" width="7" height="7" rx="1" stroke="#777" stroke-width="1.5" fill="none"/><rect x="14" y="14" width="7" height="7" rx="1" stroke="#777" stroke-width="1.5" fill="none"/></svg>Products</a>
+  <a href="categories.html"><svg class="nav-icon" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16" stroke="#777" stroke-width="2"/></svg>Shop</a>
+  <a href="profile.html"><svg class="nav-icon" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2" stroke="#777" stroke-width="2" fill="none"/><circle cx="12" cy="7" r="4" stroke="#777" stroke-width="2" fill="none"/></svg>Me</a>
+</nav>
+<script>function updateCartCount(){var c=JSON.parse(localStorage.getItem('bd_cart')||'[]');var el=document.getElementById('cart-count');if(el)el.textContent=c.reduce(function(s,i){return s+(i.qty||1)},0)}updateCartCount();</script>
+</body>
+</html>
